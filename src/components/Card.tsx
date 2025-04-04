@@ -3,6 +3,7 @@ import Count from "./Count";
 import ButtonContainer from "./ButtonContainer";
 import ResetButton from "./ResetButton";
 import { Title } from "./Title";
+import CountButton from "./CountButton";
 
 function Card() {
   const [count, setCount] = useState(0);
@@ -27,7 +28,10 @@ function Card() {
       <Title locked={locked} />
       <Count number={count} />
       <ResetButton setCount={setCount} />
-      <ButtonContainer setCount={setCount} locked={locked} />
+      <ButtonContainer>
+        <CountButton setCount={setCount} type="decrement" locked={locked} />
+        <CountButton setCount={setCount} type="increment" locked={locked} />
+      </ButtonContainer>
     </div>
   );
 }
