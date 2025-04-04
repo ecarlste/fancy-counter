@@ -5,19 +5,24 @@ import { CountButtonOperation } from "./ButtonContainer";
 type CountButtonProps = {
   type: CountButtonOperation;
   setCount: Dispatch<SetStateAction<number>>;
+  locked: boolean;
 };
 
-export default function CountButton({ type, setCount }: CountButtonProps) {
+export default function CountButton({
+  type,
+  setCount,
+  locked,
+}: CountButtonProps) {
   function handleUpdateCount() {
     if (type === "decrement") {
       setCount((prev) => Math.max(prev - 1, 0));
     } else {
-      setCount((prev) => Math.min(prev + 1, 5));
+      setCount((prev) => prev + 1);
     }
   }
 
   return (
-    <button className="count-btn" onClick={handleUpdateCount}>
+    <button disabled={locked} className="count-btn" onClick={handleUpdateCount}>
       {type === "decrement" ? (
         <MinusIcon className="count-btn-icon" />
       ) : (

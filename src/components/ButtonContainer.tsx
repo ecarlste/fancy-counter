@@ -3,15 +3,16 @@ import CountButton from "./CountButton";
 
 type ButtonContainerProps = {
   setCount: Dispatch<SetStateAction<number>>;
+  locked: boolean;
 };
 
 export type CountButtonOperation = "increment" | "decrement";
 
-function ButtonContainer({ setCount }: ButtonContainerProps) {
+function ButtonContainer({ setCount, locked }: ButtonContainerProps) {
   return (
     <div className="button-container">
-      <CountButton setCount={setCount} type="decrement" />
-      <CountButton setCount={setCount} type="increment" />
+      <CountButton setCount={setCount} type="decrement" locked={locked} />
+      <CountButton setCount={setCount} type="increment" locked={locked} />
     </div>
   );
 }
