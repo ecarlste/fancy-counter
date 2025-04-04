@@ -12,7 +12,7 @@ export default function CountButton({ type, setCount }: CountButtonProps) {
     if (type === "decrement") {
       setCount((prev) => Math.max(prev - 1, 0));
     } else {
-      setCount((prev) => prev + 1);
+      setCount((prev) => Math.min(prev + 1, 5));
     }
   }
 
