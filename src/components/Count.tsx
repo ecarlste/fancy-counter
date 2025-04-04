@@ -3,7 +3,7 @@ type CountProps = {
 };
 
 function Count({ number }: CountProps) {
-  return <p>{number}</p>;
+  return <p className="count">{number}</p>;
 }
 
 export default Count;
