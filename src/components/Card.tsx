@@ -10,7 +10,7 @@ function Card() {
 
   return (
     <div className={`card ${locked ? "card--limit" : ""}`}>
-      <Title />
+      <Title locked={locked} />
       <Count number={count} />
       <ResetButton setCount={setCount} />
       <ButtonContainer setCount={setCount} locked={locked} />
