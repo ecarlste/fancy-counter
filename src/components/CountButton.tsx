@@ -13,12 +13,14 @@ export default function CountButton({
   setCount,
   locked,
 }: CountButtonProps) {
-  function handleUpdateCount() {
+  function handleUpdateCount(event: React.MouseEvent<HTMLButtonElement>) {
     if (type === "decrement") {
       setCount((prev) => Math.max(prev - 1, 0));
     } else {
       setCount((prev) => prev + 1);
     }
+
+    event.currentTarget.blur();
   }
 
   return (

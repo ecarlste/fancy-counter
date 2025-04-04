@@ -4,8 +4,10 @@ import { Dispatch, SetStateAction } from "react";
 type ResetButtonProps = { setCount: Dispatch<SetStateAction<number>> };
 
 function ResetButton({ setCount }: ResetButtonProps) {
-  function handleResetCount() {
+  function handleResetCount(event: React.MouseEvent<HTMLButtonElement>) {
     setCount(0);
+
+    event.currentTarget.blur();
   }
 
   return (
