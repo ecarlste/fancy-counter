@@ -9,7 +9,7 @@ function Card() {
   const locked = count >= 5;
 
   return (
-    <div className="card">
+    <div className={`card ${locked ? "card--limit" : ""}`}>
       <Title />
       <Count number={count} />
       <ResetButton setCount={setCount} />
