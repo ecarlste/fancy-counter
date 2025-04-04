@@ -10,8 +10,8 @@ export type CountButtonOperation = "increment" | "decrement";
 function ButtonContainer({ setCount }: ButtonContainerProps) {
   return (
     <div className="button-container">
-      <CountButton setCount={setCount} operation="decrement" />
-      <CountButton setCount={setCount} operation="increment" />
+      <CountButton setCount={setCount} type="decrement" />
+      <CountButton setCount={setCount} type="increment" />
     </div>
   );
 }

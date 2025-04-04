@@ -3,13 +3,13 @@ import { Dispatch, SetStateAction } from "react";
 import { CountButtonOperation } from "./ButtonContainer";
 
 type CountButtonProps = {
+  type: CountButtonOperation;
   setCount: Dispatch<SetStateAction<number>>;
-  operation: CountButtonOperation;
 };
 
-export default function CountButton({ setCount, operation }: CountButtonProps) {
+export default function CountButton({ type, setCount }: CountButtonProps) {
   function handleUpdateCount() {
-    if (operation === "decrement") {
+    if (type === "decrement") {
       setCount((prev) => Math.max(prev - 1, 0));
     } else {
       setCount((prev) => prev + 1);
@@ -18,7 +18,7 @@ export default function CountButton({ setCount, operation }: CountButtonProps) {
 
   return (
     <button className="count-btn" onClick={handleUpdateCount}>
-      {operation === "decrement" ? (
+      {type === "decrement" ? (
         <MinusIcon className="count-btn-icon" />
       ) : (
         <PlusIcon className="count-btn-icon" />
