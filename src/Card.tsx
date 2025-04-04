@@ -7,7 +7,7 @@ function Card() {
   return (
     <div>
       <Title />
-      <Count />
+      <Count number={0} />
       <ResetButton />
       <CountButtons />
     </div>

@@ -1,5 +1,9 @@
-function Count() {
-  return <p>0</p>;
+type CountProps = {
+  number: number;
+};
+
+function Count({ number }: CountProps) {
+  return <p>{number}</p>;
 }
 
 export default Count;
