@@ -11,7 +11,7 @@ function Card() {
     <div className="card">
       <Title />
       <Count number={count} />
-      <ResetButton />
+      <ResetButton setCount={setCount} />
       <CountButtons setCount={setCount} />
     </div>
   );
